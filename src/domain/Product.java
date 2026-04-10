@@ -76,8 +76,14 @@ public class Product implements EntityInterface {
     }
 
     @Override
+    public UUID getUUID() {
+        return this.uuid;
+    }
+
+    @Override
     public String toString() {
         return "Product{" +
+                "UUID='" + uuid.toString() +'\'' +
                 "Sku='" + sku + '\'' +
                 ", name='" + name + '\'' +
                 ", price=" + price +

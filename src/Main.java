@@ -1,10 +1,17 @@
 import domain.Product;
+import service.ProductService;
 
 void main() {
-    Product product = new Product("AHUSA8DDSD", "PLAY 5", new BigDecimal(3000));
-    product.setPrice(new BigDecimal("1000"));
-    product.setPrice(new BigDecimal("999"));
+    ProductService productService = new ProductService();
 
-    System.out.println(product.toString());
+    productService.create(new Product(
+                    productService.generateUUID(),
+                    "SKU",
+                    "asas",
+                    new BigDecimal(2))
+    );
+
+    productService.listAll();
+
 
 }
